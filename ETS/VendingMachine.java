@@ -94,4 +94,8 @@ public class VendingMachine {
 
         stok.periksaDanCetakStokKritisAdmin();
     }
+
+    public void tampilkanStokUntukAdmin() {
+        stok.tampilkanStokAdmin();
+    }
 }
