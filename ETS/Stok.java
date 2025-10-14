@@ -1,6 +1,7 @@
 /**
  @Leyan Harits
  */
+
 public class Stok {
     // Stok utama
     private int kopiBubuk, gula, susu, air, gelasKecil, gelasBesar;
@@ -37,10 +38,6 @@ public class Stok {
         else if (ukuranGelas.equalsIgnoreCase("Besar")) this.gelasBesar--;
     }
 
-    /**
-     * Memeriksa stok untuk peringatan [Segera Habis] kepada PEMBELI.
-     * @return true jika stok menipis.
-     */
     public boolean cekStokKritis(String namaMinuman, String ukuran) {
         int batasKritisBubuk = 50; 
         int batasKritisGelas = 8;
@@ -60,9 +57,6 @@ public class Stok {
         return false;
     }
     
-    /**
-     * Memeriksa dan mencetak peringatan untuk ADMIN jika stok sangat rendah.
-     */
     public void periksaDanCetakStokKritisAdmin() {
         boolean adaStokKritis = false;
         int batasKritisBubuk = 25, batasKritisCair = 100, batasKritisGelas = 5;
@@ -79,5 +73,20 @@ public class Stok {
         if (adaStokKritis) {
             System.out.println("--> SEGERA LAKUKAN PENGISIAN ULANG!");
         }
+    }
+
+    public void tampilkanStokAdmin() {
+        System.out.println("\n--- STATUS STOK INTERNAL (KHUSUS ADMIN) ---");
+        System.out.println("- Bubuk Kopi: " + kopiBubuk + " gram");
+        System.out.println("- Gula      : " + gula + " gram");
+        System.out.println("- Susu      : " + susu + " ml");
+        System.out.println("- Air       : " + air + " ml");
+        System.out.println("- Bubuk Coklat: " + coklatBubuk + " gram");
+        System.out.println("- Bubuk Matcha: " + matchaBubuk + " gram");
+        System.out.println("- Sirup Vanila: " + sirupVanila + " ml");
+        System.out.println("- Sirup Karamel: " + sirupKaramel + " ml");
+        System.out.println("- Gelas Kecil: " + gelasKecil + " buah");
+        System.out.println("- Gelas Besar: " + gelasBesar + " buah");
+        System.out.println("-------------------------------------------");
     }
 }
